@@ -10,6 +10,6 @@ export class PostService {
   constructor(private httpClient: HttpClient) { }
 
   getAllPosts():Observable<Post[]> {
-    return this.httpClient.get<Post[]>{'http://localhost:3001/posts'};
+    return this.httpClient.get<Post[]>('http://localhost:3001/posts');
   }
 }
