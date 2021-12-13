@@ -12,11 +12,15 @@ import {PostService} from "../service/post.service";
 export class PostComponent implements OnInit {
   posts: Post[] = postsMock
   post?: Post;
+  slug : any;
   @Input() isLoading = true;
   constructor(private route: ActivatedRoute,private postService:PostService) {}
 
   ngOnInit(): void {
     this.isLoading = false;
-    this.post = postsMock.find((post) => post.id === +this.route.snapshot.params['id']);
+    this.route.paramMap.subscribe(params => { 
+      this.slug = params.get('slug'); 
+  });
+    this.post = postsMock.find((post) => post.slug === this.route.snapshot.params['slug']);
   }
 }

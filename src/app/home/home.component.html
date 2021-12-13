@@ -65,7 +65,7 @@
   <p>They are so BAD an so FUNNY!</p>
 
   <div class="card-container">
-    <p *ngIf="isloading">En Chargement</p>
+    <!-- <p *ngIf="isloading">En Chargement</p> -->
     <a
       *ngFor="let post of posts"
       [routerLink]="['/post', post.id]"
