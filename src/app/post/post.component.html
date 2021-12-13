@@ -6,6 +6,7 @@
   <aside class="aside">
     <h3>Jokes you might enjoy</h3>
     <div class="card-container card-container--list">
+      <p *ngIf="isLoading">En Chargement</p>
       <button
         *ngFor="let post of posts"
         [routerLink]="['/post', post.id]"
